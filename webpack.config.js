@@ -1,6 +1,5 @@
 // entry point -> output
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -40,6 +39,7 @@ module.exports = {
   ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "public")
+    contentBase: path.join(__dirname, "public"),
+    historyApiFallback: true
   }
 };

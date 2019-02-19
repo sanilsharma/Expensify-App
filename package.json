@@ -1,5 +1,5 @@
 {
-  "name": "indecision-app",
+  "name": "expensify-app",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Sanil Sharma",
@@ -13,7 +13,8 @@
     "npm": "^6.8.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
-    "react-modal": "^3.8.1"
+    "react-modal": "^3.8.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
