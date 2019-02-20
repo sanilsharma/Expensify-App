@@ -31,12 +31,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public"),
