@@ -19,18 +19,10 @@ const addExpense = ({
 });
 
 //REMOVE_EXPENSE
-<<<<<<< HEAD
-
-=======
->>>>>>> fc4c14d10a996b6763c6a3d92dc5cce9c4af4ce8
 const removeExpense = ({ id } = {}) => ({
   type: "REMOVE_EXPENSE",
   id
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> fc4c14d10a996b6763c6a3d92dc5cce9c4af4ce8
 //EDIT_EXPENSE
 //SET_TEXT_FIELD
 //SORT_BY_DATE
@@ -84,15 +76,8 @@ const expenseOne = store.dispatch(
 const expenseTwo = store.dispatch(
   addExpense({ description: "Coffee", amount: 300 })
 );
-<<<<<<< HEAD
+
 store.dispatch(removeExpense({ id: expenseOne.expense.id }));
-=======
-
-const r = store.dispatch(removeExpense({ id: expenseOne.expense.id }));
-
-console.log(expenseOne);
-console.log(r);
->>>>>>> fc4c14d10a996b6763c6a3d92dc5cce9c4af4ce8
 
 const demoState = {
   expenses: [
