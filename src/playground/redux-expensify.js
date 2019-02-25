@@ -79,20 +79,27 @@ const expenseTwo = store.dispatch(
 
 store.dispatch(removeExpense({ id: expenseOne.expense.id }));
 
-const demoState = {
-  expenses: [
-    {
-      id: "jhjkfhakjh",
-      description: "January Rent",
-      note: "This was the final payment for the address",
-      amount: 54500,
-      createdAt: 0
-    }
-  ],
-  filters: {
-    text: "rent",
-    sortBy: "amount", //date or amount
-    startDate: undefined,
-    endDate: undefined
-  }
+// const demoState = {
+//   expenses: [
+//     {
+//       id: uuid(),
+//       description: "January Rent",
+//       note: "This was the final payment for the address",
+//       amount: 54500,
+//       createdAt: 0
+//     }
+//   ],
+//   filters: {
+//     text: "rent",
+//     sortBy: "amount", //date or amount
+//     startDate: undefined,
+//     endDate: undefined
+//   }
+// };
+
+const user = {
+  name: "Jane",
+  age: 26
 };
+
+console.log({ ...user });
