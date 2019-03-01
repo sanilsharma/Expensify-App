@@ -29,23 +29,29 @@ class ExpenseForm extends Component {
 
   onAmountChange = e => {
     const amount = e.target.value;
-    if (amount.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ amount }));
     }
   };
 
   onDateChange = createdAt => {
-    this.setState(() => ({ createdAt }));
+    if (createdAt) {
+      this.setState(() => ({ createdAt }));
+    }
   };
 
   onFocusChange = ({ focused }) => {
     this.setState(() => ({ calenderFocused: focused }));
   };
 
+  onSubmit = e => {
+    e.preventDefault();
+  };
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             placeholder="Description"
@@ -68,6 +74,7 @@ class ExpenseForm extends Component {
             numberOfMonths={1}
             isOutsideRange={() => false}
           />
+
           <textarea
             placeholder="Add a note for your expense (optional)"
             value={this.state.note}
