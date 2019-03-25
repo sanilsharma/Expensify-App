@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --watch",
-    "test": "jest --coverage",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "build": "webpack --mode production --watch"
   },
   "dependencies": {
