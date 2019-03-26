@@ -1,4 +1,3 @@
-// import React from "react";
 import { addExpense, editExpense, removeExpense } from "../../actions/expenses";
 
 test("should setup remove expense action object", () => {
@@ -6,14 +5,50 @@ test("should setup remove expense action object", () => {
   expect(action).toEqual({ type: "REMOVE_EXPENSE", id: "123abc" });
 });
 
+test("should setup remove expense action object", () => {
+  const action = removeExpense();
+  expect(action).toEqual({ type: "REMOVE_EXPENSE", id: undefined });
+});
+
 test("should setup edit expense action object", () => {
   const action = editExpense("123abc", {
     note: "Coffee",
-    Description: "Coffee"
+    description: "Coffee"
   });
   expect(action).toEqual({
     type: "EDIT_EXPENSE",
     id: "123abc",
-    update: { note: "Coffee", Description: "Coffee" }
+    update: { note: "Coffee", description: "Coffee" }
+  });
+});
+
+test("should setup add expense action object with provided values", () => {
+  const expenseData = {
+    description: "Rent",
+    note: "This was the last months rent",
+    amount: 109500,
+    createdAt: 1000
+  };
+  const action = addExpense(expenseData);
+  expect(action).toEqual({
+    type: "ADD_EXPENSE",
+    expense: {
+      id: expect.any(String),
+      ...expenseData
+    }
+  });
+});
+
+test("should setup add expense action object with default values", () => {
+  const action = addExpense();
+  expect(action).toEqual({
+    type: "ADD_EXPENSE",
+    expense: {
+      id: expect.any(String),
+      description: "",
+      note: "",
+      amount: 0,
+      createdAt: 0
+    }
   });
 });

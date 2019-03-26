@@ -1,6 +1,6 @@
 //SET_TEXT_FIELD
 const setTextFilter = (text = "") => ({
-  type: "SET_TEXT_FIELD",
+  type: "SET_TEXT_FILTER",
   text
 });
 
